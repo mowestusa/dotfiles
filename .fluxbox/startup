@@ -19,6 +19,8 @@ localize_fluxbox_menu-mx
 #start a compositor if using complicated conkies
 #compton &
 
+/home/mowest/bin/acerfix.sh &
+
 # add launcher for legacy toolbar
 #wmalauncher-menu
 
