@@ -188,10 +188,11 @@ nnoremap <C-L> :nohl<CR><C-L>
 " colo elflord
 " colo gruvbox
 " colo desert
+ colo desert256
 " colo wombat256dave
 " colo wombat256mod
 " colo seashell
-colo night
+" colo night
 " colo nordisk
 " colo PaperColor
 " colo relaxedgreen
