@@ -124,8 +124,8 @@ Control Mod1 Delete :Exit
 # change to previous/next workspace and send windows
 Control Mod1 Left :PrevWorkspace
 Control Mod1 Right :NextWorkspace
-Control Mod1 Up :TakeToPrevWorkspace
-Control Mod1 Down :TakeToNextWorkspace
+Control Mod1 Shift Left :TakeToPrevWorkspace
+Control Mod1 Shift Right :TakeToNextWorkspace
 
 # change to a specific workspace
 Control F1 :Workspace 1
@@ -137,16 +137,16 @@ Control F3 :Workspace 3
 #Mod4 F2 :SendToWorkspace 2
 #Mod4 F3 :SendToWorkspace 3
 
-### BASIC TILING WINDOWS ###
+### PSEUDO TILING WINDOWS ###
 # Make active window 1/2 of the screen
 Mod4 Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Left}
 Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Right}
 Mod4 Up :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Up}
 Mod4 Down :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Bottom}
 # Make active window 1/4 of the screen on the upper left
-Alt Mod4 Left :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 Up}
-Alt Mod4 Right :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 TopRight}
-Control Mod4 Left :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 BottomLeft}
-Control Mod4 Right :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 BottomRight}
+Mod1 Mod4 Left :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 Up}
+Mod1 Mod4 Right :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 TopRight}
+Mod1 Shift Mod4 Left :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 BottomLeft}
+Mod1 Shift Mod4 Right :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 BottomRight}
 # toggle active window: Maximized/ last size
 Mod4 End :ToggleCmd {Maximize} {Restore}
