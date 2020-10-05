@@ -1,11 +1,12 @@
-[begin] (Fluxbox) 
-    [exec] (All apps) {xfce4-appfinder}
+[begin] (Fluxbox)
+	[exec] (About) {about-mx-fluxbox}
+	[exec] (All Apps) {rofi -show drun}
     [exec] (Browser) {firefox}
     [exec] (Email) {thunderbird}
     [exec] (File manager ) {thunar $HOME/.fluxbox} 
     [exec] (Help ) {thunar /usr/share/mxflux/help}
     [exec] (Music) {clementine}
-    [exec] (Run ) {fbrun} 
+    [exec] (Run ) {rofi -show run} 
     [exec] (Terminal) {xfce4-terminal} 
     [separator]
     [submenu] (Appearance) 
@@ -24,8 +25,8 @@
         [end]
         [exec] (Theme) {lxappearance}
         [submenu] (Toolbar)
-            [exec] (Legacy) {toolbar-legacy}
-            [exec] (User last) {toolbar-userlast}
+            [exec] (Fluxbox) {toggletint2}
+            [exec] (Traditional) {toggletint2}
         [end]
         [submenu] (Wallpaper)
             [wallpapers] (~/.fluxbox/backgrounds) {feh --bg-scale}
@@ -45,19 +46,18 @@
         [end]
         [submenu] (Keyboard)
             [exec] (DE) {setxkbmap de}
-			      [exec] (ES) {setxkbmap es} 
-			      [exec] (FR) {setxkbmap fr}
-			      [exec] (GB) {setxkbmap gb}
-			      [exec] (GR) {setxkbmap gr}
-			      [exec] (JA) {setxkbmap ja}
-			      [exec] (IT) {setxkbmap it}
-			      [exec] (PL) {setxkbmap pl}
-			      [exec] (PT) {setxkbmap pt}
-			      [exec] (RU) {setxkbmap ru}
-			      [exec] (US) {setxkbmap us}
+			[exec] (ES) {setxkbmap es} 
+	        [exec] (FR) {setxkbmap fr}
+		    [exec] (GB) {setxkbmap gb}
+		    [exec] (GR) {setxkbmap gr}
+	        [exec] (JA) {setxkbmap ja}
+   	        [exec] (IT) {setxkbmap it}
+			[exec] (PL) {setxkbmap pl}
+			[exec] (PT) {setxkbmap pt}
+			[exec] (RU) {setxkbmap ru}
+			[exec] (US) {setxkbmap us}
         [end]
-        [exec] (Traditional look) {toolbar-default}
-        [config] (Window, slit, toolbar)
+        [config] (Fluxbox)
         [exec] (Xfce) {xfce4-settings-manager}
     [end] 
     [separator]
@@ -65,7 +65,7 @@
         [include] (/usr/share/mxflux/menu/out-of-sight)
     [end]
     [submenu] (Leave)
-        [exec] (Refresh ) { fluxbox-remote restart; idesktoggle idesk refresh }
+        [exec] (Refresh) { fluxbox-remote restart; idesktoggle idesk refresh }
         [exec] (Suspend ) {sudo 'pm-suspend'}
         [exit] (Logout  ) 
         [exec] (Reboot  ) {sudo /sbin/reboot} 

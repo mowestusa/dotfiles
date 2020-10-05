@@ -1,12 +1,7 @@
 #!/bin/bash
 
 #set up slit location
-if [ "$(hostname)" = "C650" ]
-then 
-    sed -i 's/^session.screen0.slit.placement:.*/session.screen0.slit.placement: LeftTop/' $HOME/.fluxbox/init
-else
-    sed -i 's/^session.screen0.slit.placement:.*/session.screen0.slit.placement: LeftMiddle/' $HOME/.fluxbox/init
-fi
+sed -i 's/^session.screen0.slit.placement:.*/session.screen0.slit.placement: LeftCenter/' $HOME/.fluxbox/init
 
 fluxbox-remote restart; sleep 1
 

@@ -19,13 +19,20 @@ localize_fluxbox_menu-mx
 #start a compositor if using complicated conkies
 #compton &
 
+# Mowest Added (for spare work machine resolution fix)
 /home/mowest/bin/acerfix.sh &
 
 # add launcher for legacy toolbar
 #wmalauncher-menu
 
+#start Xfce panel
+#xfce4-panel &
+
 #add system monitors 
 #gkrellm &
+
+# use tint2 panel
+#tint2 &
 
 # export Qt variables
 export QT_QPA_PLATFORMTHEME=gtk2
@@ -39,20 +46,30 @@ idesktoggle idesk on 1>/dev/null 2>&1 &
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 #set the default dock
-$HOME/.fluxbox/scripts/SteveDock.mxdk &
+$HOME/.fluxbox/scripts/DefaultDock.mxdk
 
 # provide a screensaver
 xfce4-screensaver-command &
 xfce4-screensaver &
 
+# Mowest Added
+# Swap ESC with CapsLock
+setxkbmap -option "caps:swapescape"
+
 #conky to follow conky toggle settings
-$HOME/.fluxbox/scripts/conkystart &
+$HOME/.fluxbox/scripts/conkystart
 
 #place network manager on the toolbar
 nm-applet &
 
-#start pulseaudio before volumeicon so unmute works
+# Mowest Added to eliminate the need for sleep (see original below)
+# start pulseaudio before volumeicon so unmute works
 (start-pulseaudio-x11 && volumeicon -c volumeicon-fluxbox) & 
+
+# start pulseaudio before volumeicon so unmute works
+# start-pulseaudio-x11 &
+# sleep 2
+# volumeicon -c volumeicon-fluxbox & 
 
 #place clipboard on the toolbar
 clipit &
@@ -80,12 +97,9 @@ if [ $? -eq 0 ]; then
     fbautostart
 fi
 
-# Swap ESC with CapsLock
-setxkbmap -option "caps:swapescape"
-
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
-sleep 1s
+
 exec fluxbox
 # or if you want to keep a log:
 # exec fluxbox -log "~/.fluxbox/log"
