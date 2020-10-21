@@ -151,7 +151,7 @@ Control Mod1 Shift Right :TakeToNextWorkspace
 Control Mod1 t :Exec x-terminal-emulator
 
 # left click on the titlebar for a menu of options
-OnTitlebar Mouse1 :WindowMenu
+OnTitlebar Mouse3 :WindowMenu
 
 # Key Bindings to Launch Applications
 mod4 f :Exec firefox
