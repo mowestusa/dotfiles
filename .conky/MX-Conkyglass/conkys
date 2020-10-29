@@ -1,9 +1,9 @@
 conky.config = {
 -- Use Xft?
 	use_xft = true,
-	font = 'cure:size=8',
-	minimum_width = 320, minimum_height = 5,
-	maximum_width = 200,
+	font = 'cure:size=10',
+	minimum_width = 320, minimum_height = 8,
+	maximum_width = 240,
 
 -- Update interval in seconds
 	update_interval = 3,
@@ -14,7 +14,7 @@ conky.config = {
 
 -- Create own window instead of using desktop (required in nautilus)
 	own_window = true,
-	own_window_transparent = true,
+	own_window_transparent = false,
 	own_window_type = 'normal',
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
@@ -24,7 +24,7 @@ conky.config = {
 -- Minimum size of text area
 
 -- Draw shades?
-	draw_shades = false,
+	draw_shades = true,
 
 -- Draw outlines?
 	draw_outline = false,
@@ -35,16 +35,15 @@ conky.config = {
 -- Stippled borders?
 	stippled_borders = 0,
 
-
-
 -- Default colors and also border colors
+--default_color = 'CACACA'
 	default_color = 'CACACA',
 --default_shade_color white
 --default_outline_color black
 	own_window_colour = '000000',
 
 -- Text alignment, other possible values are commented
---alignment bottom_left
+--alignment top_left
 	alignment = 'top_right',
 
 -- Gap between borders of screen and text
@@ -91,10 +90,11 @@ if math.floor(os.execute("pgrep -x fluxbox>/dev/null")/256) == 0 then
    conky.config.own_window_argb_visual = false
 end
 
-conky.text = [[
-${image ./conkyground.png  -s 220x320 -p 10,10}
+-- Text can be added below to add more information.
+-- ${alignc}${voffset 10}${alignc}${color FFFFFF}$kernel
 
-${alignc}${voffset 10}${alignc}${color FFFFFF}$kernel
+conky.text = [[
+${image ./conkyground.png  -s 260x365 -p 10,10}
 
 ${alignc} UpTime: ${alignc}${color FFFFFF}$uptime
 
