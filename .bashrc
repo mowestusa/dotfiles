@@ -132,4 +132,3 @@ xterm*|rxvt*)
     ;;
 esac
 
-source $HOME/.config/bash-config/bashrc.bash
