@@ -100,6 +100,8 @@ alias l='ls -CF'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+# Added Aliases
+alias upup='sudo apt update && sudo apt upgrade -y'
 
 # Default parameter to send to the "less" command
 # -R: show ANSI colors correctly; -i: case insensitive search

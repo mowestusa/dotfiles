@@ -154,6 +154,11 @@ set wrap linebreak nolist
 
 " Enable System Clipboard
 set clipboard=unnamedplus
+
+" Setting up Unlimited Undo
+set undodir=~/.vim/undo
+set undofile
+
 "------------------------------------------------------------
 " Indentation options {{{1
 "
