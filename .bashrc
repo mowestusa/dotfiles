@@ -91,6 +91,7 @@ fi
 alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
+alias lt='ls --human-readable --size -1 -S --classify'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -102,6 +103,10 @@ if [ -f ~/.bash_aliases ]; then
 fi
 # Added Aliases
 alias upup='sudo apt update && sudo apt upgrade -y'
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+alias gh='history|grep'
+alias left='ls -t -1'
+alias trash='mv --force -t ~/.local/share/Trash '
 
 # Default parameter to send to the "less" command
 # -R: show ANSI colors correctly; -i: case insensitive search
