@@ -51,7 +51,7 @@ set noshowmode
 
 "------------------------------------------------------------
 " Highly Recommended Options
- 
+" 
 " Vim with default settings does not allow easy switching between multiple files
 " in the same editor window. Users can use multiple split windows or multiple
 " tab pages to edit multiple files, but it is still best to enable an option to
@@ -88,7 +88,6 @@ set hlsearch
 " such, it may be a good idea to disable them and use the securemodelines
 " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
 " set nomodeline
- 
  
 "------------------------------------------------------------
 " Usability options {{{1
@@ -163,7 +162,7 @@ set undofile
 " Indentation options {{{1
 "
 " Indentation settings according to personal preference.
- 
+" 
 " Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=4
@@ -187,7 +186,7 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 "----------------------------------------------------------
-"
+
 "----------------------------------------------------------
 " Colorscheme Turn On and Favorites Listed
 " colo elflord
