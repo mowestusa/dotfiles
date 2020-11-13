@@ -101,12 +101,25 @@ alias lt='ls --human-readable --size -1 -S --classify'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
 # Added Aliases
 alias upup='sudo apt update && sudo apt upgrade -y'
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias gh='history|grep'
 alias left='ls -t -1'
 alias trash='mv --force -t ~/.local/share/Trash '
+
+# Alias Function to change folders and list contents
+function cl() {
+    DIR="$*";
+        # if no DIR given, go home
+        if [ $# -lt 1 ]; then
+                DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        ls -F --color=auto
+}
 
 # Default parameter to send to the "less" command
 # -R: show ANSI colors correctly; -i: case insensitive search
