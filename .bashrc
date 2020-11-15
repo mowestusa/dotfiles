@@ -152,3 +152,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Installation instructions came from /usr/share/doc/autojump/README.Debian
+# Added the last line to source the shell script to enable autojump.
+# Uncomment the next line only if autojump doesn't seem to work.
+# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
+. /usr/share/autojump/autojump.sh
+

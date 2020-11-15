@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'PProvost/vim-ps1'
 Plug 'flazz/vim-colorschemes'
 Plug 'vifm/vifm.vim'
+" Plug 'itchyny/lightline.vim' 
 Plug 'maciakl/vim-neatstatus'
 call plug#end()
 "----------------------------------------------------------
@@ -235,4 +236,27 @@ fun! s:VAsciidocShowSyntaxHelp()
 endfun
 
 nnoremap <F8> :call <SID>VAsciidocShowSyntaxHelp()<CR>
+
+"__________________________________________________________
+" Function to add word count to lightline Plugin
+" fun! WordCount()
+"	if index(g:user_lightline_filetypes_show_wordcount, &ft) < 0
+"		return ''
+"	endif
+"	let result = wordcount()
+"	if result->has_key('visual_words')
+"		return result.visual_words . ' words'
+"	endif
+"	return result.words . ' words'
+" endfun
+
+" Add WordCount() to Lightline and Define the files in which it shows up
+" let g:lightline = {}
+" let g:lightline.component_function = { 'wordcount' : 'WordCount' }
+" let g:lightline.active = { 'left' : [ ['mode'], ['readonly', 'filename', 'modified'], ['wordcount'] ] }
+
+" Define a list of filetypes that you want the word count to appear in
+
+" let g:user_lightline_filetypes_show_wordcount = ['markdown', 'asciidoc']
+"__________________________________________________________
 
