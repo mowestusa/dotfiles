@@ -90,7 +90,8 @@ ionice -c3 nice -n19 nohup python /usr/bin/apt-notifier.py 1>/dev/null 2>&1  &
 #conky to follow conky toggle settings
 sleep 2
 $HOME/.fluxbox/scripts/conkystart
-
+# Turn on NumLock after startup
+/usr/bin/numlockx on
 # Debian-local change:
 #   - fbautostart has been added with a quick hack to check to see if it
 #     exists. If it does, we'll start it up by default.
