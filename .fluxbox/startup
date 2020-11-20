@@ -87,11 +87,14 @@ ionice -c3 nice -n19 nohup python /usr/bin/apt-notifier.py 1>/dev/null 2>&1  &
 #start fehbg to get last background selected
 ~/.fehbg
 
+# Mowest moved this further down in startup
 #conky to follow conky toggle settings
-sleep 2
-$HOME/.fluxbox/scripts/conkystart
+$HOME/.fluxbox/scripts/conkystart &
+
+# Mowest added following
 # Turn on NumLock after startup
 /usr/bin/numlockx on
+
 # Debian-local change:
 #   - fbautostart has been added with a quick hack to check to see if it
 #     exists. If it does, we'll start it up by default.
