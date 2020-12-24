@@ -103,11 +103,13 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Added Aliases
-alias upup='sudo apt update && sudo apt upgrade -y'
+alias upup='sudo apt update && sudo apt full-upgrade -y'
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias gh='history|grep'
 alias left='ls -t -1'
 alias trash='mv --force -t ~/.local/share/Trash '
+alias weather='curl http://wttr.in/South_Haven'
+alias open='xdg-open'
 
 # Alias Function to change folders and list contents
 function cl() {
@@ -158,3 +160,4 @@ esac
 # export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 . /usr/share/autojump/autojump.sh
 
+source $HOME/.config/bash-config/bashrc.bash

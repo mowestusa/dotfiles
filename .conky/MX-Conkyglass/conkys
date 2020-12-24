@@ -45,11 +45,11 @@ conky.config = {
 
 -- Text alignment, other possible values are commented
 --alignment bottom_left
-	alignment = 'top_middle',
+	alignment = 'top_right',
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = -25,
+	gap_x = -250,
 	gap_y = 25,
 
 -- Subtract file system buffers from used memory?

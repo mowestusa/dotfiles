@@ -16,12 +16,17 @@
 "----------------------------------------------------------
 " VIM Plugin Management
 call plug#begin('~/.vim/plugged')
-Plug 'PProvost/vim-ps1'
-Plug 'flazz/vim-colorschemes'
-Plug 'vifm/vifm.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdcommenter'
-" Plug 'maciakl/vim-neatstatus'
+"
+Plug 'flazz/vim-colorschemes'		" Ton of colorschemes for vim
+Plug 'vifm/vifm.vim'			" vifm in a vim buffer
+Plug 'itchyny/lightline.vim'		" Status Line with Word Count
+Plug 'preservim/nerdcommenter'		" Quickly change lines to commented or uncommented
+Plug 'voldikss/vim-floaterm'		" Floating terminal window
+Plug 'junegunn/fzf.vim'			" Fuzzy file finder in vim
+" Plug 'maciakl/vim-neatstatus'		" Simple Status Line adopt colorscheme
+" Plug 'godlygeek/tabular'		" Programming tool for lining up code
+" Plug 'TheNiteCoder/markdown.vim'	" Markdown helper scripts
+" Plug 'PProvost/vim-ps1'		" Syntax Highlighting for PowerShell
 call plug#end()
 "----------------------------------------------------------
 " VIM Plugin Configuration Options
@@ -51,6 +56,11 @@ let g:lightline.component_function = { 'wordcount' : 'WordCount' }
 let g:lightline.active = { 'left' : [ ['mode'], ['readonly', 'filename', 'modified'], ['wordcount'] ] }
 " lightline - define a list of filetypes in which word count appears
 let g:user_lightline_filetypes_show_wordcount = ['markdown', 'asciidoc', 'text']
+" vim-floaterm options
+let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8
+let g:floaterm_autoclose = 1
 "__________________________________________________________
 " Important Features from https://vim.fandom.com
 "
@@ -232,3 +242,4 @@ endfun
 
 nnoremap <F8> :call <SID>VAsciidocShowSyntaxHelp()<CR>
 "__________________________________________________________
+
