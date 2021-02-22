@@ -1,5 +1,17 @@
-----------
-----------
+# Special keywords (created by Sébastien Ballet for Flaxx https://sourceforge.net/projects/flaxx/):
+#
+#   Shift   = Shift                Mouse1  = Left Mouse Button
+#   Control = Control              Mouse2  = Middle Mouse Button
+#   Mod4    = Windows Key (Left)   Mouse3  = Right Mouse Button
+#   Mod1    = Alt key              Mouse4  = Mouse Wheel Up
+#   Menu    = Windows Key (Right)  Mouse5  = Mouse Wheel Down
+#                                  Mouse6  = Mouse Button #6
+#                                  Mouse7  = Mouse Button #7
+#
+#   OnToolbar = mouse is on toolbar
+#   OnDesktop = mouse is on desktop
+#   OnTitlebar= mouse is on window's titlebar
+
 ## MXflux additions ##
 
 # take a screen capture
@@ -20,6 +32,9 @@ none F3 :Exec thunar /home/$USER/
 # open a dropdown terminal
 none F4 :Exec xfce4-terminal --drop-down
 
+# open a little run terminal for applications
+# Super_L :Exec rofi -show drun
+
 # open the MX Tools dashboard
 none F5 :Exec mx-tools
 
@@ -36,8 +51,6 @@ mod1 F4 :Close
 #Minimize all windows on the current workspace
 Mod1 d :ShowDesktop
 
-------------
-------------
 # hide menus
 OnDesktop Mouse1 :HideMenus
 OnDesktop Mouse2 :WorkspaceMenu
@@ -74,6 +87,9 @@ OnTitlebar Move1  :StartMoving
 
 # middle click on the titlebar to lower
 OnTitlebar Mouse2 :Lower
+
+# right click on the titlebar for a menu of options
+OnTitlebar Mouse3 :WindowMenu
 
 # alt-tab
 Mod1 Tab :NextWindow {groups} (workspace=[current])
@@ -112,6 +128,10 @@ Mod1 F11 :Fullscreen
 
 # exit fluxbox
 Control Mod1 Delete :Exit
+
+# change to previous/next workspace
+Control Mod1 Left :PrevWorkspace
+Control Mod1 Right :NextWorkspace
 
 # change to a specific workspace
 Control F1 :Workspace 1
